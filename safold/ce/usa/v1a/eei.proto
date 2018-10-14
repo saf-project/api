@@ -16,21 +16,11 @@ syntax = "proto3";
 
 package saf.ce.usa.v1a;
 
-import "saf/util/empty.proto";
+import "saf/shipment/shipment.proto"; 
+import "saf/shipment/transport.proto"; 
 
 
 option go_package = "github.com/gosaf/ce/usa/v1a";
-
-
-// Service that implements ManagerCE API
-service ManagerCE {
- 
-  // 
- 
-  	rpc CreateEngagement(EEI) returns (saf.util.Empty);
-  	//rpc GetTransport(Shipment) returns (saf.util.Empty);
-   	//rpc ReturnTransport(Transport) returns (saf.util.Empty);
-}
 
 
 // The 
@@ -38,19 +28,6 @@ message EEI {
   // Required. The resource name of an existing exclusion to delete:
   //
   string name = 1;
-}
-
-
-// The 
-message Shipment {
-  // Required. The resource name of an existing exclusion to delete:
-  //
-  string name = 1;
-}
-
-// The 
-message Transport {
-  // Required. The resource name of an existing exclusion to delete:
-  //
-  string name = 1;
+  saf.shipment.Shipment shipment =2;
+  saf.shipment.Transport transport =3;
 }

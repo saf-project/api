@@ -14,23 +14,24 @@
 
 syntax = "proto3";
 
-package saf.util;
+package saf.shipping.transactions.sli;
 
 
-option go_package = "github.com/gosaf/saf/util";
+
+import "saf/base/transaction.proto";
+import "saf/shipping/roleapps/exporter.proto";
+import "saf/shipping/roleapps/shipper.proto";
+import "saf/shipping/transactions/sli/shipper_letter.proto";
+import "saf/util/ack.proto";
 
 
-// A generic empty message that you can re-use to avoid defining duplicated
-// empty messages in your APIs. A typical example is to use it as the request
-// or the response type of an API method. For instance:
-//
-//     service Foo {
-//       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
-//     }
-//
-// The JSON representation for `Empty` is empty JSON object `{}`.
-message Empty {
-    // Required. The resource name of an existing exclusion to delete:
-    //
-	string name = 1;
+option go_package = "github.com/gosaf/saf/shipping/transactions/sli";
+
+message ShipperLetterInstructionTxn{
+		saf.base.Transaction transaction=1;
+		saf.shipping.roleapps.Exporter source=2;
+		saf.shipping.roleapps.Shipper target=3;
+		saf.shipping.transactions.sli.ShipperLetter  parameter=4;
+		saf.util.Ack return=5;
 }
+		

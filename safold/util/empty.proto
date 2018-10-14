@@ -17,7 +17,7 @@ syntax = "proto3";
 package saf.util;
 
 
-option go_package = "github.com/gosaf/saf/util";
+option go_package = "github.com/gosaf/util";
 
 
 // A generic empty message that you can re-use to avoid defining duplicated
