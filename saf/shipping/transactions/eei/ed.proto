@@ -14,28 +14,14 @@
 
 syntax = "proto3";
 
-package saf.shipping.roleapps;
-
-import "saf/base/r_app.proto";
-
-//import "saf/util/ack.proto";
+package saf.shipping.transactions.eei;
 
 
 
 
-option go_package = "github.com/gosaf/saf/shipping/rollapps";
+option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
 
-message Customs{
-		saf.base.RoleApp roleApp=1;	
+message ExportDeclaration{
 		
 }
-
-service CustomsService{
-	
-
-	
-	rpc ExportInformationTxn(saf.shipping.transactions.eei.ElectronicExportInformation) returns (saf.util.Ack );
-
-	
-	
-}
+		

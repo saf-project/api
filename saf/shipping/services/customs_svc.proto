@@ -13,21 +13,17 @@
 // limitations under the License.
 
 syntax = "proto3";
-package saf.shipping.engagements;
-option go_package = "github.com/gosaf/saf/shipping/engagegements";
 
-import "saf/base/engagement.proto";
-import "saf/shipping/transactions/eei/export_information_txn.proto";
+package saf.shipping.services;
+
+import "saf/shipping/transactions/eei/ed.proto";
+import "saf/util/ack.proto";
 
 
+option go_package = "github.com/gosaf/saf/shipping/services";
 
-// E N G A G E M E N T
-message ExportDeclarationEngagegement {
-
-	saf.base.Engagement engagement=1;
-	
-	// Transactions	
-		repeated  saf.shipping.transactions.eei.ExportInformationTxn  exportInformationTxn=2;
-	
+service CustomsService{
+        
+    rpc ExportDeclarationTxn (saf.shipping.transactions.eei.ExportDeclaration) returns (saf.util.Ack);
+		
 }
-

@@ -14,11 +14,16 @@
 
 syntax = "proto3";
 
-package saf.shipping.transactions.sli;
+package saf.shipping.services;
 
-option go_package = "github.com/gosaf/saf/shipping/transactions/sli";
 
-message ShipperLetter{
-		
+import "saf/shipping/transactions/sli/shipper_letter.proto";
+import "saf/util/ack.proto";
+
+
+
+option go_package = "github.com/gosaf/saf/shipping/services";
+
+service ShipperService{	
+		rpc ShipperLetterInstructionTxn(saf.shipping.transactions.sli.ShipperLetter) returns  (saf.util.Ack);
 }
-	

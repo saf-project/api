@@ -14,11 +14,13 @@
 
 syntax = "proto3";
 
-package saf.shipping.transactions.sli;
+package saf.shipping.apps;
 
-option go_package = "github.com/gosaf/saf/shipping/transactions/sli";
+import "saf/base/r_app.proto";
 
-message ShipperLetter{
+option go_package = "github.com/gosaf/saf/shipping/rollapps";
+
+message ShippingLine{
+		saf.base.RoleApp roleApp=1;	
 		
 }
-	

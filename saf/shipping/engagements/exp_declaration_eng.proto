@@ -13,28 +13,20 @@
 // limitations under the License.
 
 syntax = "proto3";
+package saf.shipping.engagements;
+option go_package = "github.com/gosaf/saf/shipping/engagements";
 
-package saf.shipping.rollapps;
-
-import "saf/base/r_app.proto";
-
-//import "saf/util/ack.proto";
-
+import "saf/base/engagement.proto";
+import "saf/shipping/transactions/eei/ed_txn.proto";
 
 
+// E N G A G E M E N T
+message ExportDeclarationEngagegement {
 
-option go_package = "github.com/gosaf/saf/shipping/rollapps";
-
-message ShippingLine{
-		saf.base.RoleApp roleApp=1;	
-		
-}
-
-service ShippingLineService{
+	saf.base.Engagement engagement=1;
 	
-	
-	//rpc SetOrderConfirmation(onlinesale.sale.OrderConfirmation) returns (onlinesale.util.Ack);
-	
-	
+	// Transactions	
+		repeated  saf.shipping.transactions.eei.ExportDeclarationTxn  exportDeclarationTxn=2;
 	
 }
+

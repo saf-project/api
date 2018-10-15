@@ -14,14 +14,15 @@
 
 syntax = "proto3";
 
-package saf.shipping.transactions.eei;
+package saf.shipping.apps;
+
+import "saf/base/r_app.proto";
 
 
+option go_package = "github.com/gosaf/saf/shipping/rollapps";
 
-
-option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
-
-message ElectronicExportInformation{
+message Consignee{
+		saf.base.RoleApp roleApp=1;	
 		
 }
-		
+

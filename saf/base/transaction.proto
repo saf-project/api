@@ -19,6 +19,7 @@ package saf.base;
 import "saf/util/date.proto";
 import "saf/util/timestamp.proto";
 
+
 option go_package = "github.com/gosaf/saf/base";
 
 message Transaction {

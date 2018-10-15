@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+
+
+package saf.shipping.transactions.eei;
+
+
+
+import "saf/base/transaction.proto";
+import "saf/shipping/apps/exporter.proto";
+import "saf/shipping/apps/customs.proto";
+import "saf/util/ack.proto";
+import "saf/shipping/transactions/eei/ed.proto";
+
+
+option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
+
+message ExportDeclarationTxn{
+		saf.base.Transaction transaction=1;
+        
+        saf.shipping.apps.Exporter source=2;
+		saf.shipping.apps.Customs target=3;
+		saf.shipping.transactions.eei.ExportDeclaration  parameter=4;
+		saf.util.Ack return=5;
+}
+		

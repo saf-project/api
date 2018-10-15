@@ -13,23 +13,13 @@
 // limitations under the License.
 
 syntax = "proto3";
-package saf.shipping.engagements;
-option go_package = "github.com/gosaf/saf/shipping/engagegements";
 
-import "saf/base/engagement.proto";
-import "saf/shipping/transactions/sli/shipper_letter_instruction_txn.proto";
+package saf.shipping.services;
 
 
-// E N G A G E M E N T
-message CC_PTP_Engagegement {
+option go_package = "github.com/gosaf/saf/shipping/services";
 
-	saf.base.Engagement engagement=1;
-	
-
-	// Transactions	
-	repeated  saf.shipping.transactions.sli.ShipperLetterInstructionTxn  shipperLetterInstructionTxn=2;
-	
-	
+service ConsigneeService{
+		
+		
 }
-
-

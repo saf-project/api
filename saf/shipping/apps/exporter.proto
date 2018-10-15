@@ -14,24 +14,19 @@
 
 syntax = "proto3";
 
-package saf.shipping.transactions.eei;
+package saf.shipping.apps;
+
+import "saf/base/r_app.proto";
 
 
 
-import "saf/base/transaction.proto";
-import "saf/shipping/roleapps/exporter.proto";
-import "saf/shipping/roleapps/customs.proto";
-import "saf/util/ack.proto";
-import "saf/shipping/transactions/eei/electronic_export_information.proto";
 
 
-option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
 
-message ExportInformationTxn{
-		saf.base.Transaction transaction=1;
-		saf.shipping.roleapps.Exporter source=2;
-		saf.shipping.roleapps.Customs target=3;
-		saf.shipping.transactions.eei.ElectronicExportInformation  parameter=4;
-		saf.util.Ack return=5;
-}
+option go_package = "github.com/gosaf/saf/shipping/rollapps";
+
+message Exporter{
+		saf.base.RoleApp roleApp=1;	
 		
+}
+

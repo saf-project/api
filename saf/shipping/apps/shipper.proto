@@ -13,28 +13,16 @@
 // limitations under the License.
 
 syntax = "proto3";
-
-package saf.shipping.roleapps;
+package saf.shipping.apps;
 
 import "saf/base/r_app.proto";
-
-//import "saf/util/ack.proto";
 
 
 
 
 option go_package = "github.com/gosaf/saf/shipping/rollapps";
 
-message Consignee{
+message Shipper{
 		saf.base.RoleApp roleApp=1;	
 		
-}
-
-service ConsigneeService{
-	
-	
-	//rpc SetOrderConfirmation(onlinesale.sale.OrderConfirmation) returns (onlinesale.util.Ack);
-	
-	
-	
 }
