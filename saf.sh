@@ -14,18 +14,17 @@ protoc  saf/util/timestamp.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 
 ##base
 protoc  saf/base/engagement.proto  -I. --go_out=plugins=grpc:$GOPATH/src
-protoc  saf/base/r_app.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 protoc  saf/base/participant.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 protoc  saf/base/transaction.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 
 ##shipping
 
 ##apps
-protoc  saf/shipping/apps/shipper.proto  -I. --go_out=plugins=grpc:$GOPATH/src
-protoc  saf/shipping/apps/shipping_line.proto  -I. --go_out=plugins=grpc:$GOPATH/src
-protoc  saf/shipping/apps/exporter.proto  -I. --go_out=plugins=grpc:$GOPATH/src
-protoc  saf/shipping/apps/customs.proto  -I. --go_out=plugins=grpc:$GOPATH/src
-protoc  saf/shipping/apps/consignee.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/shipping/accounts/shipper.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/shipping/accounts/shipping_line.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/shipping/accounts/exporter.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/shipping/accounts/customs.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/shipping/accounts/consignee.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 
 
 ## transactions

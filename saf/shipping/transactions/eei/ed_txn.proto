@@ -1,25 +1,30 @@
+// Copyright 2018 Sea-Freight Automation Framework Foundation.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 syntax = "proto3";
-
-
-
 package saf.shipping.transactions.eei;
-
-
-
 import "saf/base/transaction.proto";
-import "saf/shipping/apps/exporter.proto";
-import "saf/shipping/apps/customs.proto";
+import "saf/shipping/accounts/exporter.proto";
+import "saf/shipping/accounts/customs.proto";
 import "saf/util/ack.proto";
 import "saf/shipping/transactions/eei/ed.proto";
 
-
 option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
-
 message ExportDeclarationTxn{
 		saf.base.Transaction transaction=1;
-        
-        saf.shipping.apps.Exporter source=2;
-		saf.shipping.apps.Customs target=3;
+        saf.shipping.accounts.ExporterAccount sender=2;
+		saf.shipping.accounts.CustomsAccount recepient=3;
 		saf.shipping.transactions.eei.ExportDeclaration  parameter=4;
 		saf.util.Ack return=5;
 }

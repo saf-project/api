@@ -17,9 +17,9 @@ package saf.shipping.engagements;
 option go_package = "github.com/gosaf/saf/shipping/engagements";
 
 import "saf/base/engagement.proto";
-import "saf/shipping/apps/shipping_line.proto";
-import "saf/shipping/apps/shipper.proto";
-import "saf/shipping/apps/consignee.proto";
+import "saf/shipping/accounts/shipping_line.proto";
+import "saf/shipping/accounts/shipper.proto";
+import "saf/shipping/accounts/consignee.proto";
 
 
 
@@ -33,11 +33,11 @@ message CC_PTP_Engagegement {
 	saf.base.Engagement engagement=1;
 
 	// Roleapps
-	saf.shipping.apps.Shipper shipper=2;
+	saf.shipping.accounts.ShipperAccount shipper=2;
 
-	saf.shipping.apps.ShippingLine shippingLine=3;
+	saf.shipping.accounts.ShippingLineAccount shippingLine=3;
 	
-	saf.shipping.apps.Consignee consignee=4;
+	saf.shipping.accounts.ConsigneeAccount consignee=4;
 
 	// Transactions	
 	repeated  saf.shipping.transactions.sli.ShipperLetterInstructionTxn  shipperLetterInstructionTxn=5;

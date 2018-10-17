@@ -19,8 +19,8 @@ package saf.shipping.transactions.sli;
 
 
 import "saf/base/transaction.proto";
-import "saf/shipping/apps/exporter.proto";
-import "saf/shipping/apps/shipper.proto";
+import "saf/shipping/accounts/exporter.proto";
+import "saf/shipping/accounts/shipper.proto";
 import "saf/shipping/transactions/sli/shipper_letter.proto";
 import "saf/util/ack.proto";
 
@@ -29,9 +29,8 @@ option go_package = "github.com/gosaf/saf/shipping/transactions/sli";
 
 message ShipperLetterInstructionTxn{
 		saf.base.Transaction transaction=1;
-		saf.shipping.apps.Exporter source=2;
-		saf.shipping.apps.Shipper target=3;
+		saf.shipping.accounts.ExporterAccount sender=2;
+		saf.shipping.accounts.ShipperAccount recepient=3;
 		saf.shipping.transactions.sli.ShipperLetter  parameter=4;
 		saf.util.Ack return=5;
 }
-		

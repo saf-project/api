@@ -14,19 +14,16 @@
 
 syntax = "proto3";
 
-package saf.base;
+package saf.shipping.accounts;
 
 import "saf/base/participant.proto";
 
 
-option go_package = "github.com/gosaf/saf/base";
+option go_package = "github.com/gosaf/saf/shipping/accounts";
 
-
-message RoleApp{
-	
-	string nodeId=1;
-	string url=2;
-	saf.base.Participant participant=3;
-	
-	
+message ShippingLineAccount{
+		string id=1;//  Unique ID
+		string url=2;
+		saf.base.Participant participant=3;	
+		
 }

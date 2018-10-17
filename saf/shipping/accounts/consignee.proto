@@ -13,16 +13,14 @@
 // limitations under the License.
 
 syntax = "proto3";
-package saf.shipping.apps;
 
-import "saf/base/r_app.proto";
+package saf.shipping.accounts;
+import "saf/base/participant.proto";
+option go_package = "github.com/gosaf/saf/shipping/accounts";
 
-
-
-
-option go_package = "github.com/gosaf/saf/shipping/rollapps";
-
-message Shipper{
-		saf.base.RoleApp roleApp=1;	
+message ConsigneeAccount{
+		string id=1;//  Unique ID
+		string url=2;
+		saf.base.Participant participant=3;	
 		
 }
