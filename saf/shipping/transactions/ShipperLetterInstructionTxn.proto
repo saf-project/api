@@ -1,5 +1,5 @@
 // Copyright 2018 Sea-Freight Automation Framework Foundation.
-//
+//  http://www.saf-project.org/
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,14 +14,23 @@
 
 syntax = "proto3";
 
-package saf.shipping.transactions.eei;
+package saf.shipping.transactions;
 
 
 
+import "saf/base/transaction.proto";
+import "saf/shipping/participants/exporter.proto";
+import "saf/shipping/participants/shipper.proto";
+import "saf/shipping/messages/ShipperLetterInstruction.proto";
+import "saf/util/ack.proto";
 
-option go_package = "github.com/gosaf/saf/shipping/transactions/eei";
 
-message ExportDeclaration{
-		
+option go_package = "github.com/gosaf/saf/shipping/transactions";
+
+message ShipperLetterInstructionTxn{
+		saf.base.Transaction transaction=1;
+		saf.shipping.participants.Exporter sender=2;
+		saf.shipping.participants.Shipper recepient=3;
+		saf.shipping.messages.ShipperLetterInstruction  parameter=4;
+		saf.util.Ack return=5;
 }
-		

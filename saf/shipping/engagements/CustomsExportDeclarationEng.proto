@@ -1,0 +1,43 @@
+// Copyright 2018 Sea-Freight Automation Framework Foundation.
+//  http://www.saf-project.org/
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package saf.shipping.engagements;
+
+import "saf/base/Engagement.proto";
+import "saf/shipping/transactions/ExportDeclarationTxn.proto";
+import "saf/shipping/transactions/EDExporterConfirmationTxn.proto";
+import "saf/shipping/transactions/EDShipperConfirmationTxn.proto";
+import "saf/shipping/participants/Exporter.proto";
+import "saf/shipping/participants/Customs.proto";
+import "saf/shipping/participants/Shipper.proto";
+
+option go_package = "github.com/gosaf/saf/shipping/engagements";
+
+message CustomsExportDeclarationEng {
+
+	saf.base.Engagement engagement=1;
+	
+	// Participants
+	saf.shipping.participants.Exporter exporter=2;
+	saf.shipping.participants.Customs customs=3;
+	saf.shipping.participants.Shipper shipper=4;
+
+	// Transactions	
+	repeated  saf.shipping.transactions.ExportDeclarationTxn  exportDeclarationTxn=5;
+	repeated  saf.shipping.transactions.EDExporterConfirmationTxn  EDExporterConfirmationTxn=6;		
+	repeated  saf.shipping.transactions.EDShipperConfirmationTxn  EDShipperConfirmationTxn=7;
+
+}
+

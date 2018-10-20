@@ -14,13 +14,11 @@
 
 syntax = "proto3";
 
-package saf.base;
-import "saf/base/Owner.proto";
-option go_package = "github.com/gosaf/saf/base";
+package saf.shipping.participants;
+import "saf/base/Participant.proto";
+option go_package = "github.com/gosaf/saf/shipping/accounts";
 
-message Participant{
-		string id=1;//  Unique ID
-		string url=2;
-		saf.base.Owner owner=3;	
+message Exporter{
+	saf.base.Participant participant=1;	
 		
 }

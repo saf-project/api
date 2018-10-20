@@ -1,5 +1,5 @@
 // Copyright 2018 Sea-Freight Automation Framework Foundation.
-//
+//  http://www.saf-project.org/
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,16 +14,15 @@
 
 syntax = "proto3";
 
-package saf.shipping.accounts;
 
-import "saf/base/participant.proto";
+package saf.base;
 
+option go_package = "github.com/gosaf/saf/base";
 
-option go_package = "github.com/gosaf/saf/shipping/accounts";
-
-message ShippingLineAccount{
-		string id=1;//  Unique ID
-		string url=2;
-		saf.base.Participant participant=3;	
-		
+message Owner {
+    string ownerId=1;//  Unique ID number for this individual or company
+	string type=2;
+    string name=3;
+    string address=4;
+	
 }

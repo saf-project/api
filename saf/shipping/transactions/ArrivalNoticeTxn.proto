@@ -1,5 +1,5 @@
 // Copyright 2018 Sea-Freight Automation Framework Foundation.
-//
+//  http://www.saf-project.org/
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -14,16 +14,18 @@
 
 syntax = "proto3";
 
-package saf.shipping.services;
+package saf.shipping.transactions;
+
+import "saf/base/transaction.proto";
+//import "saf/shipping/accounts/exporter.proto";
+//import "saf/shipping/accounts/shipper.proto";
+//import "saf/shipping/transactions/sli/shipper_letter.proto";
+//import "saf/util/ack.proto";
 
 
-import "saf/shipping/transactions/sli/shipper_letter.proto";
-import "saf/util/ack.proto";
+option go_package = "github.com/gosaf/saf/shipping/transactions";
 
-
-
-option go_package = "github.com/gosaf/saf/shipping/services";
-
-service ShipperService{	
-		rpc ShipperLetterInstructionTxn(saf.shipping.transactions.sli.ShipperLetter) returns  (saf.util.Ack);
+message ArrivalNoticeTxn{
+    saf.base.Transaction transaction=1;
+		
 }

@@ -14,13 +14,17 @@
 
 syntax = "proto3";
 
-package saf.base;
-import "saf/base/Owner.proto";
-option go_package = "github.com/gosaf/saf/base";
+package saf.shipping.transactions;
 
-message Participant{
-		string id=1;//  Unique ID
-		string url=2;
-		saf.base.Owner owner=3;	
-		
+import "saf/base/transaction.proto";
+//import "saf/shipping/accounts/exporter.proto";
+//import "saf/shipping/accounts/shipper.proto";
+//import "saf/shipping/transactions/sli/shipper_letter.proto";
+//import "saf/util/ack.proto";
+
+
+option go_package = "github.com/gosaf/saf/shipping/transactions";
+
+message BookingAcknowledgementTxn{
+    saf.base.Transaction transaction=1;
 }
