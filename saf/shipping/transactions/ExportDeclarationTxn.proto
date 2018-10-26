@@ -15,18 +15,15 @@
 syntax = "proto3";
 package saf.shipping.transactions;
 import "saf/base/transaction.proto";
-import "saf/shipping/participants/Exporter.proto";
-import "saf/shipping/participants/Customs.proto";
+import "saf/shipping/roles/Exporter.proto";
+import "saf/shipping/roles/Customs.proto";
 import "saf/util/ack.proto";
 import "saf/shipping/messages/ExportDeclaration.proto";
-
-
 option go_package = "github.com/gosaf/saf/shipping/transactions";
 message ExportDeclarationTxn{
-		saf.base.Transaction transaction=1;
-        saf.shipping.participants.Exporter sender=2;
-		saf.shipping.participants.Customs recepient=3;
-		saf.shipping.messages.ExportDeclaration  parameter=4;
-		saf.util.Ack return=5;
+	saf.base.Transaction transaction=1;
+	saf.shipping.roles.Exporter sender=2;		
+	saf.shipping.roles.Customs recepient=3;
+	saf.shipping.messages.ExportDeclaration  parameter=4;
+	saf.util.Ack return=5;
 }
-		

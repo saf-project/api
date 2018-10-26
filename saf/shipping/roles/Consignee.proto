@@ -14,11 +14,12 @@
 
 syntax = "proto3";
 
-package saf.shipping.participants;
+package saf.shipping.roles;
 import "saf/base/Participant.proto";
-option go_package = "github.com/gosaf/saf/shipping/accounts";
+option go_package = "github.com/gosaf/saf/shipping/roles";
 
-message Exporter{
-	saf.base.Participant participant=1;	
-		
+
+message Consignee{
+		saf.base.Participant participant=1;	
+	
 }

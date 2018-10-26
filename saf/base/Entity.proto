@@ -14,11 +14,15 @@
 
 syntax = "proto3";
 
-package saf.shipping.participants;
-import "saf/base/Participant.proto";
-option go_package = "github.com/gosaf/saf/shipping/participants";
 
-message Customs{
-	saf.base.Participant participant=1;	
-		
+package saf.base;
+
+option go_package = "github.com/gosaf/saf/base";
+
+message Entity {
+    string id=1;//  Unique ID number for this individual or company
+	string type=2;
+    string name=3;
+    string address=4;
+    string email=5;
 }

@@ -17,10 +17,7 @@ syntax = "proto3";
 package saf.shipping.transactions;
 
 import "saf/base/transaction.proto";
-//import "saf/shipping/accounts/exporter.proto";
-//import "saf/shipping/accounts/shipper.proto";
-//import "saf/shipping/transactions/sli/shipper_letter.proto";
-//import "saf/util/ack.proto";
+
 
 
 option go_package = "github.com/gosaf/saf/shipping/transactions";

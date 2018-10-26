@@ -15,16 +15,10 @@
 syntax = "proto3";
 package saf.shipping.transactions;
 import "saf/base/transaction.proto";
-//import "saf/shipping/accounts/exporter.proto";
-//import "saf/shipping/accounts/customs.proto";
-//import "saf/util/ack.proto";
-//import "saf/shipping/transactions/eei/ed.proto";
+
 
 option go_package = "github.com/gosaf/saf/shipping/transactions";
 message GetCarriageRateTxn{
 		saf.base.Transaction transaction=1;
-        //saf.shipping.accounts.ExporterAccount sender=2;
-		//saf.shipping.accounts.CustomsAccount recepient=3;
-		//saf.shipping.transactions.ExportDeclaration  parameter=4;
-		//saf.util.Ack return=5;
+        
 }

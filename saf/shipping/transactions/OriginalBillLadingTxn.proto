@@ -15,10 +15,7 @@
 syntax = "proto3";
 package saf.shipping.transactions;
 import "saf/base/transaction.proto";
-//import "saf/shipping/accounts/exporter.proto";
-//import "saf/shipping/accounts/customs.proto";
-//import "saf/util/ack.proto";
-//import "saf/shipping/transactions/eei/ed.proto";
+
 
 option go_package = "github.com/gosaf/saf/shipping/transactions";
 message OriginalBillLadingTxn{

@@ -19,9 +19,9 @@ import "saf/base/Engagement.proto";
 import "saf/shipping/transactions/ExportDeclarationTxn.proto";
 import "saf/shipping/transactions/EDExporterConfirmationTxn.proto";
 import "saf/shipping/transactions/EDShipperConfirmationTxn.proto";
-import "saf/shipping/participants/Exporter.proto";
-import "saf/shipping/participants/Customs.proto";
-import "saf/shipping/participants/Shipper.proto";
+import "saf/shipping/roles/Exporter.proto";
+import "saf/shipping/roles/Customs.proto";
+import "saf/shipping/roles/Shipper.proto";
 
 option go_package = "github.com/gosaf/saf/shipping/engagements";
 
@@ -29,10 +29,10 @@ message CustomsExportDeclarationEng {
 
 	saf.base.Engagement engagement=1;
 	
-	// Participants
-	saf.shipping.participants.Exporter exporter=2;
-	saf.shipping.participants.Customs customs=3;
-	saf.shipping.participants.Shipper shipper=4;
+	// roles
+	saf.shipping.roles.Exporter exporter=2;
+	saf.shipping.roles.Customs customs=3;
+	saf.shipping.roles.Shipper shipper=4;
 
 	// Transactions	
 	repeated  saf.shipping.transactions.ExportDeclarationTxn  exportDeclarationTxn=5;

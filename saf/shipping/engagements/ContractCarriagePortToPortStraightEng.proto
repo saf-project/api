@@ -16,10 +16,10 @@ syntax = "proto3";
 package saf.shipping.engagements;
 option go_package = "github.com/gosaf/saf/shipping/engagements";
 import "saf/base/Engagement.proto";
-import "saf/shipping/participants/exporter.proto";
-import "saf/shipping/participants/ShippingLine.proto";
-import "saf/shipping/participants/shipper.proto";
-import "saf/shipping/participants/consignee.proto";
+import "saf/shipping/roles/exporter.proto";
+import "saf/shipping/roles/ShippingLine.proto";
+import "saf/shipping/roles/shipper.proto";
+import "saf/shipping/roles/consignee.proto";
 import "saf/shipping/transactions/ShipperLetterInstructionTxn.proto";
 import "saf/shipping/transactions/GetCarriageRateTxn.proto";
 import "saf/shipping/transactions/CarriageRateTxn.proto";
@@ -36,10 +36,10 @@ import "saf/shipping/transactions/EmptyReturnTxn.proto";
 message ContractCarriagePortToPortStraightEng{
 	saf.base.Engagement engagement=1;
 	//accounts
-	saf.shipping.participants.Exporter exporter=2;
-	saf.shipping.participants.Shipper shipper=3;
-	saf.shipping.participants.ShippingLine shippingLine=4;
-	saf.shipping.participants.Consignee consignee=5;
+	saf.shipping.roles.Exporter exporter=2;
+	saf.shipping.roles.Shipper shipper=3;
+	saf.shipping.roles.ShippingLine shippingLine=4;
+	saf.shipping.roles.Consignee consignee=5;
 	// transactions	
 	repeated  saf.shipping.transactions.ShipperLetterInstructionTxn  shipperLetterInstructionTxn=6;
 	repeated  saf.shipping.transactions.GetCarriageRateTxn  getCarriageRateTxn=7;
@@ -53,6 +53,5 @@ message ContractCarriagePortToPortStraightEng{
 	repeated  saf.shipping.transactions.FreightPaymentTxn  freightPaymentTxn=15;
 	repeated  saf.shipping.transactions.ArrivalNoticeTxn  arrivalNoticeTxn=16;
 	repeated  saf.shipping.transactions.EmptyReturnTxn  emptyReturnTxn=17;
+	
 }
-
-

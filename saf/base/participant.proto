@@ -15,12 +15,12 @@
 syntax = "proto3";
 
 package saf.base;
-import "saf/base/Owner.proto";
+import "saf/base/Entity.proto";
 option go_package = "github.com/gosaf/saf/base";
 
 message Participant{
 		string id=1;//  Unique ID
 		string url=2;
-		saf.base.Owner owner=3;	
+		saf.base.Entity entity=3;	
 		
 }
