@@ -1,0 +1,57 @@
+// Copyright 2018 Sea-Freight Automation Framework Foundation.
+//  http://www.saf-project.org/
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package saf.carriage.engagements;
+option go_package = "github.com/gosaf/saf/carriage/engagements";
+import "saf/base/Engagement.proto";
+import "saf/roles/exporter.proto";
+import "saf/roles/ShippingLine.proto";
+import "saf/roles/shipper.proto";
+import "saf/roles/consignee.proto";
+import "saf/carriage/transactions/ShipperLetterInstructionTxn.proto";
+import "saf/carriage/transactions/GetCarriageRateTxn.proto";
+import "saf/carriage/transactions/CarriageRateTxn.proto";
+import "saf/carriage/transactions/ExportBookingTxn.proto";
+import "saf/carriage/transactions/BookingAcknowledgementTxn.proto";
+import "saf/carriage/transactions/ShippingInstructionTxn.proto";
+import "saf/carriage/transactions/EmptyReleaseTxn.proto";
+import "saf/carriage/transactions/VGMTxn.proto";
+import "saf/carriage/transactions/OriginalBillLadingTxn.proto";
+import "saf/carriage/transactions/FreightPaymentTxn.proto";
+import "saf/carriage/transactions/ArrivalNoticeTxn.proto";
+import "saf/carriage/transactions/EmptyReturnTxn.proto";
+
+message ContractCarriagePortToPortStraightEng{
+	saf.base.Engagement engagement=1;
+	//accounts
+	saf.roles.Exporter exporter=2;
+	saf.roles.Shipper shipper=3;
+	saf.roles.ShippingLine shippingLine=4;
+	saf.roles.Consignee consignee=5;
+	// transactions	
+	repeated  saf.carriage.transactions.ShipperLetterInstructionTxn  shipperLetterInstructionTxn=6;
+	repeated  saf.carriage.transactions.GetCarriageRateTxn  getCarriageRateTxn=7;
+	repeated  saf.carriage.transactions.CarriageRateTxn  carriageRateTxn=8;
+	repeated  saf.carriage.transactions.ExportBookingTxn  exportBookingTxn=9;
+	repeated  saf.carriage.transactions.BookingAcknowledgementTxn  bookingAcknowledgementTxn=10;
+	repeated  saf.carriage.transactions.ShippingInstructionTxn  shippingInstructionTxn=11;
+	repeated  saf.carriage.transactions.EmptyReleaseTxn  emptyReleaseTxn=12;
+	repeated  saf.carriage.transactions.VGMTxn  VGMTxn=13;
+	repeated  saf.carriage.transactions.OriginalBillLadingTxn  originalBillLadingTxn=14;
+	repeated  saf.carriage.transactions.FreightPaymentTxn  freightPaymentTxn=15;
+	repeated  saf.carriage.transactions.ArrivalNoticeTxn  arrivalNoticeTxn=16;
+	repeated  saf.carriage.transactions.EmptyReturnTxn  emptyReturnTxn=17;
+	
+}

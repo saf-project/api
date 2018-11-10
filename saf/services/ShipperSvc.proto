@@ -1,0 +1,35 @@
+// Copyright 2018 Sea-Freight Automation Framework Foundation.
+//    http://www.saf-project.org/
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package saf.services;
+
+import "saf/exportdeclartion/messages/EDShipperConfirmation.proto";
+import "saf/carriage/messages/ShipperLetterInstruction.proto";
+import "saf/carriage/messages/CarriageRate.proto";
+import "saf/carriage/messages/BookingAcknowledgement.proto";
+import "saf/carriage/messages/EmptyRelease.proto";
+import "saf/carriage/messages/OriginalBillLading.proto";
+import "saf/util/ack.proto";
+option go_package = "github.com/gosaf/saf/services";
+
+service ShipperService{		
+		rpc EDShipperConfirmationTxn(saf.exportdeclaration.messages.EDShipperConfirmation) returns  (saf.util.Ack);
+		rpc ShipperLetterInstructionTxn(saf.carriage.messages.ShipperLetterInstruction) returns  (saf.util.Ack);
+		rpc CarriageRateTxn(saf.carriage.messages.CarriageRate) returns  (saf.util.Ack);
+		rpc BookingAcknowledgementTxn(saf.carriage.messages.BookingAcknowledgement)   returns  (saf.util.Ack);
+		rpc EmptyReleaseTxn(saf.carriage.messages.EmptyRelease) 	returns  (saf.util.Ack);
+		rpc OriginalBillLadingTxn(saf.carriage.messages.OriginalBillLading) returns  (saf.util.Ack);
+		
+}
