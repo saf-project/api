@@ -13,19 +13,11 @@
 // limitations under the License.
 
 syntax = "proto3";
-package saf.exportdeclaration.transactions;
-import "saf/base/transaction.proto";
-//import "saf/roles/Shipper.proto";
-//import "saf/roles/Exporter.proto";
-//import "saf/exportdeclaration/messages/EDShipperConfirmation.proto";
-//import "saf/util/Ack.proto";
 
-option go_package = "github.com/gosaf/saf/exportdeclaration/transactions";
-message EDShipperConfirmationTxn{
-        saf.base.Transaction transaction=1;
-        //saf.roles.Shipper sender=2;
-		//saf.roles.Exporter recepient=3;
-		//saf.exportdeclaration.messages.EDShipperConfirmation  parameter=4;
-		//saf.util.Ack return=5;
-		
+package saf.tba;
+option go_package = "github.com/gosaf/saf/tba";
+
+
+message Container{
+   string  number=1;	
 }

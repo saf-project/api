@@ -15,7 +15,7 @@
 syntax = "proto3";
 package saf.services;
 
-import "saf/exportdeclartion/messages/EDShipperConfirmation.proto";
+import "saf/exportdeclaration/messages/EDShipperConfirmation.proto";
 import "saf/carriage/messages/ShipperLetterInstruction.proto";
 import "saf/carriage/messages/CarriageRate.proto";
 import "saf/carriage/messages/BookingAcknowledgement.proto";
@@ -23,7 +23,6 @@ import "saf/carriage/messages/EmptyRelease.proto";
 import "saf/carriage/messages/OriginalBillLading.proto";
 import "saf/util/ack.proto";
 option go_package = "github.com/gosaf/saf/services";
-
 service ShipperService{		
 		rpc EDShipperConfirmationTxn(saf.exportdeclaration.messages.EDShipperConfirmation) returns  (saf.util.Ack);
 		rpc ShipperLetterInstructionTxn(saf.carriage.messages.ShipperLetterInstruction) returns  (saf.util.Ack);
@@ -31,5 +30,5 @@ service ShipperService{
 		rpc BookingAcknowledgementTxn(saf.carriage.messages.BookingAcknowledgement)   returns  (saf.util.Ack);
 		rpc EmptyReleaseTxn(saf.carriage.messages.EmptyRelease) 	returns  (saf.util.Ack);
 		rpc OriginalBillLadingTxn(saf.carriage.messages.OriginalBillLading) returns  (saf.util.Ack);
-		
+
 }

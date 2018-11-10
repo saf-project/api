@@ -59,8 +59,11 @@ protoc  saf/exportdeclaration/transactions/ExportDeclarationTxn.proto  -I. --go_
 ##messages
 ##transactions
 
+#### tba-----------
+protoc  saf/tba/Container.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+
 ##services------------
-####protoc  saf/services/ShipperSvc.proto  -I. --go_out=plugins=grpc:$GOPATH/src
+protoc  saf/services/ShipperSvc.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 protoc  saf/services/ShippingLineSvc.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 protoc  saf/services/ExporterSvc.proto  -I. --go_out=plugins=grpc:$GOPATH/src
 protoc  saf/services/CustomsSvc.proto  -I. --go_out=plugins=grpc:$GOPATH/src
