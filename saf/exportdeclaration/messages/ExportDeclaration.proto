@@ -19,8 +19,6 @@ package saf.exportdeclaration.messages;
 
 option go_package = "github.com/gosaf/saf/exportdeclaration/messages";
 
-
-
 message ExportDeclaration{
     
 }		
